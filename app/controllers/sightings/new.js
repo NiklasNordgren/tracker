@@ -4,7 +4,6 @@ export default Controller.extend({
   actions: {
     create() {
       var self = this;
-      debugger;
       this.get('model.sighting').save().then(function() {
         self.transitionToRoute('sightings');
       });
