@@ -10,8 +10,7 @@ module.exports = function(environment) {
       'font-src': ["'self'"],
       'connect-src': [
         'self',
-        'https://bnr-tracker-api.herokuapp.com/api/witnesses',
-        'https://bnr-tracker-api.herokuapp.com/api/cryptids',
+        'https://bnr-tracker-api.herokuapp.com'
       ],
       'img-src': ["'self'"],
       'style-src': ["'self'"],
