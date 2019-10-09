@@ -8,6 +8,8 @@ const {
 } = DS;
 
 export default Model.extend({
+  //Gold Challenge: Adding Titles
+  title: DS.attr('string', { defaultValue: "Mahatma" }),
   fName: DS.attr('string'),
   lName: DS.attr('string'),
   email: DS.attr('string'),
@@ -20,6 +22,11 @@ export default Model.extend({
   //Bronze Challenge: Changing the Computed Property
   firstNameAndEmail: computed('fName', 'lName', function() {
     return this.get('fName') + ' - ' + this.get('email');
+  }),
+
+  //Gold Challenge: Adding Titles
+  titleName: computed('title', 'lName', function() {
+    return this.get('title') + ' ' + this.get('lName');
   })
 
 
