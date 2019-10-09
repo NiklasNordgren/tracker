@@ -14,7 +14,7 @@ Router.map(function() {
     this.route('edit');
   });
   this.route('cryptids');
-  this.route('cryptid', {path: 'cryptids/:cryptid_id'});
+  this.route('cryptid', {path: ':cryptid_id'});
   this.route('witnesses');
   this.route('witness');
 });
