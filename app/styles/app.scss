@@ -1,5 +1,14 @@
-$bg-color: coral;
+// ----------------------------
+// bootstrap variable overrides
+// ----------------------------
 
-#ember-welcome-page-id-selector {
-  background: $bg-color;
+// end bootstrap variable overrides
+@import 'bootstrap';
+
+//Gold Challenge: Customizing the NavBar
+.navbar {
+  background-color: #99ff99;
+  border-radius: 2px;
+  box-shadow: 1px 1px;
+  padding: 2px;
 }

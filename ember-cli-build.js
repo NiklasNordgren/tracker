@@ -4,11 +4,20 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function(defaults) {
 
-  var bootstrapPath = 'bower_components/bootstrap-sass/assets/';
+  //var bootstrapPath = 'bower_components/bootstrap-sass/assets/';
+
+  //Bronze Challenge: Limiting Imports
+  var collapsePath = 'bower_components/bootstrap-sass/assets/';
+  var transitionPath = 'bower_components/bootstrap-sass/assets/';
 
   let app = new EmberApp(defaults, {
     sassOptions: {
-      includePaths: [bootstrapPath + 'stylesheets']
+
+      includePaths: [
+        //bootstrapPath + 'stylesheets',
+        collapsePath + 'stylesheets',
+        transitionPath + 'stylesheets'
+      ]
     }
   });
 
@@ -27,7 +36,9 @@ module.exports = function(defaults) {
 
   // Create paths to bootstrap assets
   // Add assets to app with import
-  app.import(bootstrapPath + 'javascripts/bootstrap.js');
+  //app.import(bootstrapPath + 'javascripts/bootstrap.js');
+  app.import(collapsePath + 'javascripts/bootstrap/collapse.js');
+  app.import(transitionPath + 'javascripts/bootstrap/transition.js');
 
   return app.toTree();
 };
