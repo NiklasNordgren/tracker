@@ -7,6 +7,10 @@ export default Route.extend({
       lName: "Gandee",
       email: "fake@bignerdranch.com"
     });
+
+    //Bronze Challenge: Changing the Computed Property
+    console.log(witnessRecord.firstNameAndEmail);
+
     return [witnessRecord];
   }
 });

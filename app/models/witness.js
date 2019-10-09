@@ -15,5 +15,12 @@ export default Model.extend({
 
   fullName: computed('fName', 'lName', function() {
     return this.get('fName') + ' ' + this.get('lName');
+  }),
+
+  //Bronze Challenge: Changing the Computed Property
+  firstNameAndEmail: computed('fName', 'lName', function() {
+    return this.get('fName') + ' - ' + this.get('email');
   })
+
+
 });
