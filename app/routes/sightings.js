@@ -3,6 +3,8 @@ import Route from '@ember/routing/route';
 export default Route.extend({
 
   model() {
+
+    /*
     let record1 = this.store.createRecord('sighting', {
       //Silver Challenge: Flagging New Sightings
       isNew: true,
@@ -18,6 +20,8 @@ export default Route.extend({
       sightedAt: new Date('2016-03-21')
     });
     return [record1, record2, record3];
+    */
+    return this.store.findAll('sighting', {reload: true});
   }
 
 });
