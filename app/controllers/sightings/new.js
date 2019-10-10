@@ -8,6 +8,9 @@ export default Controller.extend({
         self.transitionToRoute('sightings');
       });
     },
-    cancel() {}
+    cancel() {
+      this.get('model.sighting').deleteRecord();
+      this.transitionToRoute('sightings');
+    }
   }
 });
