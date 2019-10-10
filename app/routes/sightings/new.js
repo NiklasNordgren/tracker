@@ -2,6 +2,9 @@ import Route from '@ember/routing/route';
 import {
   hash
 } from 'rsvp';
+import {
+  computed
+} from '@ember/object';
 
 export default Route.extend({
   model() {
@@ -11,12 +14,23 @@ export default Route.extend({
       witnesses: this.store.findAll('witness')
     });
   },
+  sighting: computed.alias('controller.model.sighting'),
   actions: {
     willTransition() {
       var sighting = this.get('controller.model.sighting');
       if (sighting.get('hasDirtyAttributes')) {
         sighting.deleteRecord();
       }
+    },
+    create() {
+      var self = this;
+      this.get('sighting').save().then(function() {
+        self.transitionTo('sightings');
+      });
+    },
+    cancel() {
+      this.get('sighting').deleteRecord();
+      this.transitionTo('sightings');
     }
   }
 });
