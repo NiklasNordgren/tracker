@@ -6,6 +6,7 @@ import {
   computed
 } from '@ember/object';
 
+
 export default Route.extend({
   model() {
     return hash({
@@ -14,6 +15,7 @@ export default Route.extend({
       witnesses: this.store.findAll('witness')
     });
   },
+
   sighting: computed.alias('controller.model.sighting'),
   actions: {
     willTransition() {
@@ -27,10 +29,17 @@ export default Route.extend({
       this.get('sighting').save().then(function() {
         self.transitionTo('sightings');
       });
+
     },
     cancel() {
       this.get('sighting').deleteRecord();
       this.transitionTo('sightings');
+    },
+    didMakeWitnessSelection(value) {
+      this.get('sighting').set('witnesses', value);
+    },
+    didMakeCryptidSelection(value) {
+      this.get('sighting').set('cryptid', value);
     }
   }
 });
