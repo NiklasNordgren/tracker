@@ -5,7 +5,7 @@ const {
 
 export default Model.extend({
   //Silver Challenge: Flagging New Sightings
-  isNew : DS.attr('boolean', { defaultValue: false }),
+  //isNew : DS.attr('boolean', { defaultValue: false }),
   location: DS.attr('string'),
   createdAt: DS.attr('date'),
   sightedAt: DS.attr('date'),
