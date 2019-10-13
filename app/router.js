@@ -11,8 +11,8 @@ Router.map(function() {
     this.route('new');
   });
   this.route('sighting', function() {
+    this.route('index', {path: ':sighting_id/'});
     this.route('edit', {path: "sightings/:sighting_id/edit"});
-    //this.route('', {path: ':sighting_id'});
   });
   this.route('cryptids');
   this.route('cryptid', {path: ':cryptid_id'});

@@ -1,1 +1,16 @@
-{{outlet}}
+<div class="text-center">
+  <div class="media well">
+    {{ cryptid-thumbnail-helper model.cryptid.profileImg model.cryptid.name }}
+    <div class="caption">
+      <h3>{{model.cryptid.name}}</h3>
+      {{#if model.location}}
+        <h3>{{model.location}}</h3>
+        <p>{{moment-from model.sightedAt}}</p>
+      {{else}}
+        <h3 class="text-danger">Bogus Sighting</h3>
+      {{/if}}
+    </div>
+    {{#link-to 'sighting.edit' model.id tagName="button"class="btn btn-success btn-block"}}Edit{{/link-to}}
+    {{#link-to 'sightings' tagName="button" class="btn btn-link btn-block"}}Return{{/link-to}}
+  </div>
+</div>

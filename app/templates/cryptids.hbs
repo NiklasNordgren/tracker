@@ -4,7 +4,7 @@
       <div class="media well">
         <!--Gold Challenge: Creating a Custom Thumbnail Helper-->
         {{#link-to 'cryptid' cryptid.id title = cryptid.name }}
-        {{ cryptid-thumbnail-helper cryptid.profileImg}}
+          {{ cryptid-thumbnail-helper cryptid.profileImg cryptid.name }}
         {{/link-to}}
         <div class="caption">
           <h3>{{cryptid.name}}</h3>
