@@ -3,7 +3,8 @@ import {
   hash
 } from 'rsvp';
 import {
-  computed
+  computed,
+  set
 } from '@ember/object';
 
 
@@ -26,6 +27,13 @@ export default Route.extend({
     },
     create() {
       var self = this;
+
+      //Silver Challenge: Sighting Date
+      let sighting = this.get('sighting');
+      let sightingDate = sighting.sightedAt;
+      let date = new Date(sightingDate);
+      set(sighting, 'sightedAt', date);
+
       this.get('sighting').save().then(function() {
         self.transitionTo('sightings');
       });
