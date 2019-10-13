@@ -19,10 +19,18 @@
   </div>
   <div class="form-group">
     <label for="location">Location</label>
-    {{input value=model.sighting.location type="text" class="form-control"
-    name="location" required=true}}
-    <label for="date">Date</label> {{input value=model.sighting.sightingDate
-        type="date" class="form-control" name="date" required=true}}
+    {{input value=model.sighting.location
+      type="text"
+      class="form-control"
+      name="location"
+      required=true}}
+      <!-- Silver Challenge: Sighting Date -->
+    <label for="date">Date</label>
+    {{input value = model.sighting.sightedAt
+      type="date"
+      class="form-control"
+      name="date"
+      required=true}}
   </div>
   <button type="submit" class="btn btn-info btn-block">Update</button>
   <button {{action 'cancel'}} class="btn btn-block">Cancel</button>

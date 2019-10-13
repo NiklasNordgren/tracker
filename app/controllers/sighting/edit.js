@@ -1,6 +1,7 @@
 import Controller from '@ember/controller';
 import {
-  computed
+  computed,
+  set
 } from '@ember/object';
 
 export default Controller.extend({
@@ -8,7 +9,14 @@ export default Controller.extend({
   actions: {
     update() {
       if (this.get('sighting').get('hasDirtyAttributes')) {
-        this.get('sighting').save().then(() => {
+
+        //Silver Challenge: Sighting Date
+        let sighting = this.get('sighting');
+        let sightingDate = sighting.sightedAt;
+        let date = new Date(sightingDate);
+        set(sighting, 'sightedAt', date);
+
+        sighting.save().then(() => {
           this.transitionToRoute('sightings');
         });
       }
