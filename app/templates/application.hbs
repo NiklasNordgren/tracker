@@ -24,4 +24,12 @@
     </div><!-- /.container-fluid -->
   </nav>
 </header>
-<div class="container">{{outlet}}</div>
+<div class="container">
+  {{#if isAlertShowing}}
+    {{flash-alert
+      message=alertMessage
+      alertType=alertType
+      close=(action "removeAlert")}}
+  {{/if}}
+  {{outlet}}
+</div>

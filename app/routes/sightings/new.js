@@ -34,7 +34,9 @@ export default Route.extend({
       let date = new Date(sightingDate);
       set(sighting, 'sightedAt', date);
 
-      this.get('sighting').save().then(function() {
+      sighting.save().then(function() {
+        //Bronze Challenge: Customizing the Alert Message
+        self.send('flash', {alertType: "success", message: "New sighting. " + sighting.location + ", " + sightingDate});
         self.transitionTo('sightings');
       });
 
