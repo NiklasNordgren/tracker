@@ -4,6 +4,7 @@ export default Controller.extend({
   alertMessage: null,
   alertType: null,
   isAlertShowing: false,
+  showLinkCryptids : true,
   actions: {
     removeAlert() {
       this.set('alertMessage', "");
